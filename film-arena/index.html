@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Film Arena - Home</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const cards = Array.from(document.querySelectorAll('.film-card'));
+
+  
+  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (!isTouch) return;
+
+  cards.forEach(card => {
+    card.addEventListener('click', function (e) {
+      
+      if (!card.classList.contains('is-active')) {
+        e.preventDefault();
+        
+        cards.forEach(c => c !== card && c.classList.remove('is-active'));
+        card.classList.add('is-active');
+      } else {
+        
+      }
+    }, {passive: false});
+  });
+
+  
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.film-card')) {
+      cards.forEach(c => c.classList.remove('is-active'));
+    }
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+       
+      }
+    });
+  }, { threshold: 0.2 }); 
+
+  reveals.forEach(el => observer.observe(el));
+});
+</script>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">🎬 Film Arena</div>
+  <button class="hamburger" id="hamburger">☰</button>
+  <nav id="navMenu">
+    <ul>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="movies.html">Movies</a></li>
+      <li><a href="series.html">TV Series</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="dropdown">
+        <a href="#">Categories ▾</a>
+        <div class="dropdown-content">
+          <a href="#">Action</a>
+          <a href="#">Comedy</a>
+          <a href="#">Drama</a>
+          <a href="#">Horror</a>
+          <a href="#">Sci-Fi</a>
+          <a href="#">Romance</a>
+          <a href="#">Thriller</a>
+          <a href="#">TV Series</a>
+    </ul>
+  </nav>
+  <button id="darkModeToggle" class="toggle-btn">🌙</button>
+  <div class="search-container">
+    <input type="text" placeholder="Search movies or series...">
+  </div>
+</header>
+<section class="reveal zoom-in">
+<section class="hero"  style="text-align: center;">
+  <h1>Welcome to Film Arena</h1>
+  <h1>Discover the latest movies & TV series, reviews, and ratings.</h1>
+</section>
+  
+</section>
+<div class="container">
+<section class="reveal fade-left">
+<section class="content">
+  <h2>Latest Movies</h2>
+  <div class="film-grid">
+  <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/movie1.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Green Mile</h3>
+      <p>⭐ 4.8/5</p>
+      <p>1996 • Crime,Fantacy</p>
+      <p>The Green Mile is a 1999 American epic fantasy drama film written and directed by Frank Darabont and based on the 1996 novel by Stephen King.</p>
+    </div>
+  </div>
+     
+  <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/movie5.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Interstellar</h3>
+      <p>⭐ 4.8/5</p>
+      <p>2014 • Sci-fi,Adventure</p>
+      <p>The film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for mankind.</p>
+    </div>
+  </div>
+    
+  <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/movie3.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Guardian Of The Galaxy</h3>
+      <p>⭐ 4.6/5</p>
+      <p>2014 • Action, Sci-fi</p>
+      <p>In the film, Peter Quill (Pratt) and a group of extraterrestrial criminals go on the run after stealing a powerful artifact.</p>
+    </div>
+  </div>
+  
+  <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/movie2.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Shutter Island</h3>
+      <p>⭐ 4.8/5</p>
+      <p>2010 • Thriller,Mystery</p>
+      <p>While investigating a missing patient at a psychiatric facility, a US marshal gets caught in a web of deception and starts to question his reality.</p>
+    </div>
+  </div>
+    
+  <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/movie4.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Transformers</h3>
+      <p>⭐ 4.6/5</p>
+      <p>2007 • Action, Robots</p>
+      <p>Transformers is a series of science fiction action films based on the Transformers franchise.</p>
+    </div>
+   
+  </div>
+  </div>
+</section>
+</section>
+
+<section class="content">
+  <h2>Popular TV Series</h2>
+  <div class="film-grid">
+  <div class="film-card" tabindex="0">
+    <img class="thumb" src="tvseries/series1.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Breaking Bad</h3>
+      <p>⭐ 4.8/5</p>
+      <p>2008 • Crime,Drama</p>
+      <p>A high school chemistry teacher dying of cancer teams with a former student to secure his family's future by manufacturing and selling crystal meth.</p>
+    </div>
+  </div>
+  
+
+    <div class="film-card" tabindex="0">
+    <img class="thumb" src="tvseries/series2.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Band Of Brothers</h3>
+      <p>⭐ 4.5/5</p>
+      <p>2001 • Action,Drama,War</p>
+      <p>Band of Brothers is a 2001 American war drama miniseries based on historian Stephen E. Ambrose's 1992 non-fiction book of the same name.</p>
+    </div>
+    </div>
+
+    
+    <div class="film-card" tabindex="0">
+    <img class="thumb" src="tvseries/series3.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Better Call Saul</h3>
+      <p>⭐ 4.8/5</p>
+      <p>2015 • Action,Drugs,Drama</p>
+      <p>The trials and tribulations of criminal lawyer Jimmy McGill in the years leading up to his fateful run-in with Walter White and Jesse Pinkman..</p>
+    </div>
+    </div>
+
+    <div class="film-card" tabindex="0">
+    <img class="thumb" src="tvseries/series4.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Friends</h3>
+      <p>⭐ 4.6/5</p>
+      <p>1994 • Sitcom,Comedy</p>
+      <p>Follows the personal and professional lives of six twenty to thirty year-old friends living in the Manhattan borough of New York City.</p>
+    </div>
+  </div>
+   <div class="film-card" tabindex="0">
+    <img class="thumb" src="tvseries/series5.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Peacemaker</h3>
+      <p>⭐ 4.7/5</p>
+      <p>1994 • Action,Drama</p>
+      <p>A man fights for peace at any cost, no matter how many people he has to kill to get it. Watch on Fandango at Home</p>
+    </div>
+   </div>
+   </div>
+
+</section>
+<div class="nav-buttons">
+  <a href="login.html" class="btn prev-btn">← Previous</a>
+  <a href="movies.html" class="btn next-btn">Next →</a>
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

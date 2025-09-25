@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movies - Film Arena</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const cards = Array.from(document.querySelectorAll('.film-card'));
+
+  
+  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (!isTouch) return;
+
+  cards.forEach(card => {
+    card.addEventListener('click', function (e) {
+      
+      if (!card.classList.contains('is-active')) {
+        e.preventDefault();
+        // close any other active cards
+        cards.forEach(c => c !== card && c.classList.remove('is-active'));
+        card.classList.add('is-active');
+      } else {
+        
+      }
+    }, {passive: false});
+  });
+
+  
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.film-card')) {
+      cards.forEach(c => c.classList.remove('is-active'));
+    }
+  });
+});
+</script>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">🎬 Film Arena</div>
+  <button class="hamburger" id="hamburger">☰</button>
+  <nav id="navMenu">
+    <ul>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="movies.html" class="active">Movies</a></li>
+      <li><a href="series.html">TV Series</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="dropdown">
+        <a href="#">Categories ▾</a>
+        <div class="dropdown-content">
+          <a href="#">Action</a>
+          <a href="#">Comedy</a>
+          <a href="#">Drama</a>
+          <a href="#">Horror</a>
+          <a href="#">Sci-Fi</a>
+          <a href="#">Romance</a>
+          <a href="#">Thriller</a>
+          <a href="#">TV Series</a>
+    </ul>
+  </nav>
+  <button id="darkModeToggle" class="toggle-btn">🌙</button>
+  <div class="search-container">
+    <input type="text" placeholder="Search movies...">
+  </div>
+</header>
+
+<section class="content">
+  <header class="hero">
+  <h1>Explore Top Movies</h1>
+    <p>Dive into reviews of the most trending Movies worldwide 🌍</p>
+  </header>
+  <div class="film-grid">
+  <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/moviea.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Inception</h3>
+      <p>⭐ 4.8/5</p>
+      <p>2010 • Sci-fi,Action</p>
+    </div>
+  </div>
+
+    <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/movieb.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Battleship</h3>
+      <p>⭐ 4.4/5</p>
+      <p>2012 • Sci-fi,Action,Alien</p>
+    </div>
+  </div>
+    <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/moviec.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Saving Private Ryan</h3>
+      <p>⭐ 4.8/5</p>
+      <p>1998• War,Action</p>
+    </div>
+  </div>
+
+    <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/movied.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Man Of Steel</h3>
+      <p>⭐ 4.8/5</p>
+      <p>2013 • Sci-fi,Action</p>
+    </div>
+  </div>
+
+    <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/moviee.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Spider Man-No Way Home</h3>
+      <p>⭐ 4.6/5</p>
+      <p>2021 • Fantacy,Action</p>
+    </div>
+  </div>
+
+    <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/movief.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Uncharted</h3>
+      <p>⭐ 4.4/5</p>
+      <p>2021 • Adventure,Action</p>
+    </div>
+  </div>
+
+  <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/movieg.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Alien vs Predetor</h3>
+      <p>⭐ 4.2/5</p>
+      <p>2004 • Horror,Action</p>
+    </div>
+  </div>
+
+  <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/movieh.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Once Upon a Time In Hollywood</h3>
+      <p>⭐ 4.7/5</p>
+      <p>2019 • Comedy,Western</p>
+    </div>
+  </div>
+
+  <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/moviei.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Lord Of The Rings</h3>
+      <p>⭐ 4.8/5</p>
+      <p>2001 • Fantacy,Adventure</p>
+    </div>
+  </div>
+
+  <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/moviej.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Harry Potter</h3>
+      <p>⭐ 4.9/5</p>
+      <p>2001 • Adventure,Action</p>
+    </div>
+  </div>
+
+  <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/moviek.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>Wall-E</h3>
+      <p>⭐ 4.6/5</p>
+      <p>2008 • Family,Sci-fi</p>
+    </div>
+  </div>
+
+  <div class="film-card" tabindex="0">
+    <img class="thumb" src="images/moviel.jpg" alt="Film poster: Movie 1">
+    <div class="info">
+      <h3>King Kong</h3>
+      <p>⭐ 4.7/5</p>
+      <p>2005 • Adventure,Action</p>
+    </div>
+  </div>
+  </div>
+  
+</section>
+
+<div class="nav-buttons">
+  <a href="index.html" class="btn prev-btn">← Previous</a>
+  <a href="series.html" class="btn next-btn">Next →</a>
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

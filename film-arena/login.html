@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Film Arena</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="slideshow-background">
+    <div class="overlay"></div>
+  </div>
+
+<header class="navbar">
+  <div class="logo">🎬 Film Arena</div>
+  <button class="hamburger" id="hamburger">☰</button>
+  <nav id="navMenu">
+    <ul>
+      <li><a href="login.html" class="active">Login</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="movies.html">Movies</a></li>
+      <li><a href="series.html">TV Series</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="dropdown">
+        <a href="#">Categories ▾</a>
+        <div class="dropdown-content">
+          <a href="#">Action</a>
+          <a href="#">Comedy</a>
+          <a href="#">Drama</a>
+          <a href="#">Horror</a>
+          <a href="#">Sci-Fi</a>
+          <a href="#">Romance</a>
+          <a href="#">Thriller</a>
+          <a href="#">TV Series</a>
+    </ul>
+  </nav>
+  <button id="darkModeToggle" class="toggle-btn">🌙</button>
+</header>
+
+<section class="content login-page">
+  <div class="login-card">
+    <h2>Welcome Back</h2>
+    <p>Login to access your personalized movie & series recommendations</p>
+    <form class="login-form">
+      <input type="text" placeholder="Username" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit" class="btn" onclick="location.href='index.html'">Login</button>
+      <p>Don't have an account? <a href="index.html">Sign Up</a></p>
+    </form>
+  </div>
+</section>
+<div class="nav-buttons">
+  <a href="contact.html" class="btn prev-btn">← Previous</a>
+  <a href="index.html" class="btn next-btn">Next →</a>
+</div>
+<button type="submit" class="btn" onclick="location.href='index.html'">Login</button>
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
